@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
-#import random
+import random
+from random import randint
 
 
 bot = commands.Bot(command_prefix='>', intents=discord.Intents.all())
@@ -18,7 +19,7 @@ async def on_message(message):
 @bot.slash_command(name='help', description='Выводит все команды и их краткое описание.')
 async def helper(ctx):
     await ctx.delete()
-    await ctx.send('[1]Выводит ')
+    await ctx.send('[/]...')
 
 @bot.slash_command(name='test', description='Выводит сообщение')
 async def test(ctx):
