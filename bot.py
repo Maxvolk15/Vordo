@@ -23,8 +23,8 @@ async def helper(ctx):
 @bot.slash_command(name='test', description='Выводит сообщение')
 async def test(ctx):
     await ctx.delete()
-    await ctx.send('Проверка пройдена')
+    await ctx.send('Проверка пройдена!')
 
 
-token = 'MTEyNDg0MTMxMzQ5NDM2ODM4Ng.GzneNu.z-UBV2Zx7IuOAd3w9p_ZpysGs1SsdA3jWYtc6s'
+token = 'MTEyNDg0MTMxMzQ5NDM2ODM4Ng.GRBY2a.5hzPKBC43huTEqIVK-m6GgfXcwsEdZKYZDfzmY'
 bot.run(token)
