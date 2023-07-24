@@ -29,6 +29,8 @@ async def test(ctx):
     await asyncio.sleep(5) #Время сна (сек)
     await ctx.delete() #Удаляет сообщение(команду)
     await ctx.send('Проверка пройдена!')
+    await ctx.respond('Да') #Отвечает на сообщение
+
 
 #required - обязательно указывать или нет
 #default - стандартное значение аргумента, если он не был указан
