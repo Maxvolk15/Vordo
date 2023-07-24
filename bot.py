@@ -26,7 +26,7 @@ async def helper(ctx): #Сама команда
 @bot.slash_command(name='test', description='Выводит сообщение')
 async def test(ctx):
     await ctx.defer() #Позволяет ждать ответа от бота, не выдавая ошибку
-    await asyncio.sleep(5) #Время сна (сек)
+    await asyncio.sleep(3) #Время сна (сек)
     await ctx.delete() #Удаляет сообщение(команду)
     await ctx.send('Проверка пройдена!')
     await ctx.respond('Да') #Отвечает на сообщение
@@ -45,6 +45,28 @@ async def test2(
     ):
     await ctx.delete()
 
+class CustomBoolArgType(commands.Converter):
+    choices = ('Да', 'Нет')
+    async def convert(cls, ctx, arg): #cls — объект этого класса\ctx — контекст выполнения команды\arg — значение аргумента
+        return arg == 'Да'
+@bot.slash_command(name='test3')
+async def test3(ctx, arg: Option(CustomBoolArgType, choices=CustomBoolArgType.choices)):
+    await ctx.respond(f'{arg}, {type(arg).__name__}')
+
+'''
+class IntFromStrArgType(commands.Converter):
+    values = ('Два', 'Один', 'Три')
+
+    async def convert(cls, ctx, arg):
+        try:
+            return cls.values.index(arg) + 1
+        except ValueError:
+            return -1
+
+@bot.slash_command()
+async def test4(ctx, arg: Option(IntFromStrArgType)):
+    await ctx.respond(f'{arg}, {type(arg).__name__}')
+'''
 
 #Тесты закончены------------------------------------------------------------------------------|
 
