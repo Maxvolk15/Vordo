@@ -70,5 +70,5 @@ async def test4(ctx, arg: Option(IntFromStrArgType)):
 
 #Тесты закончены------------------------------------------------------------------------------|
 
-token = 'MTEyNDg0MTMxMzQ5NDM2ODM4Ng.GRBY2a.5hzPKBC43huTEqIVK-m6GgfXcwsEdZKYZDfzmY'
+token = '' #Токен бота
 bot.run(token) #Запускает бота с настройками, ВСЕГДА В КОНЦЕ КОДА
